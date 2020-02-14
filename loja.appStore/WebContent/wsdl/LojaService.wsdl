@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://appStore.loja.servico.fiap" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://appStore.loja.servico.fiap" xmlns:intf="http://appStore.loja.servico.fiap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://appStore.loja.servico.fiap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="consultaCod">
+    <complexType>
+     <sequence>
+      <element name="cod" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaCodResponse">
+    <complexType>
+     <sequence>
+      <element name="consultaCodReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="consultaCodResponse">
+
+      <wsdl:part element="impl:consultaCodResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaCodRequest">
+
+      <wsdl:part element="impl:consultaCod" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="LojaService">
+
+      <wsdl:operation name="consultaCod">
+
+         <wsdl:input message="impl:consultaCodRequest" name="consultaCodRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultaCodResponse" name="consultaCodResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="LojaServiceSoapBinding" type="impl:LojaService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="consultaCod">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultaCodRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultaCodResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="LojaServiceService">
+
+      <wsdl:port binding="impl:LojaServiceSoapBinding" name="LojaService">
+
+         <wsdlsoap:address location="http://tempuri.org/loja.appStore/services/LojaService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
