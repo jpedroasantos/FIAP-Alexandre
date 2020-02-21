@@ -1,0 +1,6 @@
+
+public class EstoqueBasico {
+	public int soma(int nr1, int nr2) {
+		return(nr1+nr2);
+	}
+}
